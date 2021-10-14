@@ -24,4 +24,4 @@ deploy:
   edge: true 
   app: devopslab-kleber
   on:
-      branch: main
+      branch: master
