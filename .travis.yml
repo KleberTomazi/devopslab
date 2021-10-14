@@ -16,3 +16,12 @@ install:
 # Criando etapa para o script de teste que deve rodar toda vez que o código for alterado.
 script:
   - pytest -v test.py
+
+# Definindo o deploy no Heroku
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  edge: true 
+  app: devopslab-kleber
+  on:
+      branch: main
