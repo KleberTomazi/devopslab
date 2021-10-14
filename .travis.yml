@@ -1,14 +1,18 @@
-# Versão/Distribuição do Ubuntu
+# Versão/Distribuição do Ubuntu.
 os: linux
 dist: focal
 
-# Linguagem utilizada para desenvolver a aplicação                                                                                                                                                       
-language: python                                                                                                                                                                                         
+# Linguagem utilizada para desenvolver a aplicação.
+language: python
 
-# Versão que a aplicação suporta.                                                                                                                                                                        
-python:                                                                                                                                                                                                  
-  - "3.8"                                                                                                                                                                                              
+# Versão que a aplicação suporta.
+python:
+  - "3.8"
 
-# Instalação de módulos que são necessários para a aplicação.                                                                                                                                            
-install:                                                                                                                                                                                                 
+# Instalação de módulos que são necessários para a aplicação.
+install:
   - pip install flask pytest
+
+# Criando etapa para o script de teste que deve rodar toda vez que o código for alterado.
+script:
+  - pytest -v test.py
