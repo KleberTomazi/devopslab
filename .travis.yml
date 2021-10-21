@@ -12,7 +12,7 @@ python:
 # Informando o Travis que desejamos inserir o SonarCloud no processo de nossa pipeline.
 addons:
   sonarcloud:
-    organization: KleberTomazi
+    organization: klebertomazi
     token: ${SONAR_TOKEN}
 
 # Instalação de módulos que são necessários para a aplicação.
