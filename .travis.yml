@@ -9,13 +9,20 @@ language: python
 python:
   - "3.8"
 
+# Informando o Travis que desejamos inserir o SonarCloud no processo de nossa pipeline.
+addons:
+  sonarcloud:
+    organization: KleberTomazi
+    token: ${SONAR_TOKEN}
+
 # Instalação de módulos que são necessários para a aplicação.
 install:
   - pip install flask pytest
 
 # Criando etapa para o script de teste que deve rodar toda vez que o código for alterado.
 script:
-  - pytest -v test.py
+  - pytest -v test.py || travis_terminate 1;
+  - sonar-scanner || travis_terminate 1;
 
 # Definindo o deploy no Heroku
 deploy:
