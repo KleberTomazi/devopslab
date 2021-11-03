@@ -17,7 +17,7 @@ addons:
 
 # Instalação de módulos que são necessários para a aplicação.
 install:
-  - pip install flask pytest
+  - pip install flask pytest flask-wtf
 
 # Criando etapa para o script de teste que deve rodar toda vez que o código for alterado.
 script:
